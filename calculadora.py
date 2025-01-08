@@ -1,3 +1,14 @@
+def verificarEntradas():
+	resultado=0
+	num1= input("Digite o primeiro numero: ")
+	num2= input("Digite o segundo numero: ")
+	try:
+		int(num1)
+		int(num2)	
+	except Exception as e:
+		print("Os dois valores devem ser numericos")
+ 
+
 print("------Calculadora------\n")
 
 print("Digite o numero da operacao desejada ou -1 para sair:\n")
@@ -12,7 +23,7 @@ while (opcao != -1):
 	print(f'Vc selecionou a opção {opcao}')
 	match (opcao):
 		case 1:
-			break
+			result= verificarEntradas()
 		case 2:
 			break
 		case 3:
