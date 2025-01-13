@@ -58,23 +58,19 @@ def verificarEntradasMultiplicacao(num1,num2):
 def Dividir():
 	num1= input("Digite o primeiro numero: ")
 	num2= input("Digite o segundo numero: ")
-	div=verificarEntradasDivisao(num1,num2)
-	if isinstance(div,int):
+	div= verificarEntradasDivisao(num1,num2)
+	if isinstance(div,float):
 		return div
 	else:
 		return 0	
 
 def verificarEntradasDivisao(num1,num2):
-	if int(num2)==0:
-		isValid=0
-	else:	
-		try:
-			primeiroNumero=int(num1)
-			segundoNumero=int(num2)
-			isValid= primeiroNumero/segundoNumero
-		except Exception as e:
-			print("Os dois valores devem ser numericos")
-	return isValid		
+	try:
+		primeiroNumero=int(num1)
+		segundoNumero=int(num2)
+		return (primeiroNumero/segundoNumero)
+	except Exception as e:
+		print("Os dois valores devem ser numericos e o divisor deve ser diferente de 0.")		
 
 """def mostrarEscolhas():
 	for i in listaEscolhas:
