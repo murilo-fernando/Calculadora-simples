@@ -72,9 +72,19 @@ def verificarEntradasDivisao(num1,num2):
 	except Exception as e:
 		print("Os dois valores devem ser numericos e o divisor deve ser diferente de 0.")		
 
-"""def mostrarEscolhas():
-	for i in listaEscolhas:
-		print(i)"""
+
+def memorizarNumero():
+    numeroMemorizar = input("Digite o número que deseja memorizar: ")
+    try:
+        # Tentativa de conversão para número
+        numeroConvertido = float(numeroMemorizar) if '.' in numeroMemorizar else int(numeroMemorizar)
+
+        # Salva o número no arquivo
+        with open("memoria.txt", "a") as arquivoMemoria:
+            arquivoMemoria.write(str(numeroConvertido) + "\n")
+            print("Entrada salva!")
+    except ValueError:
+        print("Os valores memorizados só podem ser numéricos.")
 
 
 print("------Calculadora------\n")
@@ -104,8 +114,9 @@ while (opcao != -1):
 		case 4:
 			resultadoDivisao= Dividir()
 			print(f'Resultado da divisão: {resultadoDivisao}\n')
+		case 5:
+			memorizarNumero()
 		case _:
-			"""mostrarEscolhas()"""
 			break
 			 				
 			
